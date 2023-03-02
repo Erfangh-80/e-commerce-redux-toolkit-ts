@@ -39,8 +39,3 @@ const Banner: FC = (): JSX.Element => {
 
 export default Banner;
 
-{
-  /* <img src={slide1} alt="slide 1" />
-<img src={slide2} alt="slide 1" />
-<img src={slide3} alt="slide 1" /> */
-}
