@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+}
+
+.category {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category img {
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.category h3 {
+  font-size: 1.3rem;
+  text-align: center;
+}
