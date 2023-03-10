@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  background-color: #212529;
+  color: #fff;
+  padding: 2rem 0px;
+  padding-left: 2.5rem;
+}
+
+.footerItem h3 {
+  font-weight: 700;
+}
+
+.footerItem:last-child div {
+  margin-top: 10px;
+}
+
+.icon {
+  padding-right: 1rem;
+}
+
+
+@media (max-width: 768px){
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 450px){
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footerItem{
+        margin-top: 1.2rem;
+    }
+}
