@@ -2,26 +2,32 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Product } from "../types/types";
 
-interface ICategoryState {
-  categories: Product[];
+interface IProductState {
+  Product: Product;
   loading: Boolean;
   error: string;
 }
 
-const initialState: ICategoryState = {
-  categories: [],
+const initialState: IProductState = {
+  Product: {
+    id: 0,
+    images: [],
+    price: "",
+    title: "",
+    category: { id: 0, image: "", name: "" },
+  },
   loading: false,
   error: "",
 };
 
-export const getCategory = createAsyncThunk(
-  "categories/getCategory",
+export const getproduct = createAsyncThunk(
+  "categories/getproduct",
   async (id: string | undefined) => {
     if (!id) {
       return undefined;
     }
     return axios
-      .get(`https://api.escuelajs.co/api/v1/categories/${id}/products`)
+      .get(`https://api.escuelajs.co/api/v1/products/${id}`)
       .then((response) => response.data);
   }
 );
@@ -31,15 +37,14 @@ const categorySlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getCategory.fulfilled, (state, action) => {
+    builder.addCase(getproduct.fulfilled, (state, action) => {
       state.loading = false;
-      state.categories = [];
-      state.categories.push(...action.payload);
+      state.Product = { ...action.payload };
     });
-    builder.addCase(getCategory.pending, (state, action) => {
+    builder.addCase(getproduct.pending, (state, action) => {
       state.loading = true;
     });
-    builder.addCase(getCategory.rejected, (state, action) => {
+    builder.addCase(getproduct.rejected, (state, action) => {
       state.error = "error in fetching data";
     });
   },
