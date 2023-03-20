@@ -1,0 +1,22 @@
+.container {
+    padding: 7px 2rem;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+}
+
+.homeIcon{
+    font-size: 1.5rem;
+    color: #808080;
+    
+}
+
+.arrowIcon{
+    font-size: 2rem;
+    color: #808080;
+}
+
+.container span {
+    color: #808080;
+    font-weight: 700;
+}
