@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 // components
-import Navbar from "../components/Layout/Navbar/Navbar";
 import Banner from "../components/module/Banner";
 import Categories from "../components/module/Categories";
 import ProductList from "../components/template/ProductList";
@@ -8,14 +7,13 @@ import ProductList from "../components/template/ProductList";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../store/stoe";
 import { getProducts } from "../store/ProductsSlice";
-import Footer from "../components/module/Footer";
 
 const HomePage = () => {
   const { products } = useSelector((state: RootState) => state.products);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getProducts());
+    if (!products.length) dispatch(getProducts());
   }, []);
 
   const electronics = products.filter(
@@ -27,12 +25,10 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
       <Banner />
       <Categories />
       <ProductList products={productData} text="Our products" />
       <ProductList products={electronicData} text="Electronics" />
-      <Footer />
     </>
   );
 };
