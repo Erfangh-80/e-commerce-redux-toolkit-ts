@@ -6,6 +6,7 @@ import { IoSearch } from "react-icons/io5";
 import styles from "./Navbar.module.css";
 // components
 import Category from "./Category";
+import { Link } from "react-router-dom";
 
 const Navbar: FC = (): JSX.Element => {
   return (
@@ -23,9 +24,11 @@ const Navbar: FC = (): JSX.Element => {
           </button>
         </div>
         <div className={styles.shop}>
-          <FaShoppingCart className={styles.shopIcon} />
-          <p>Cart</p>
-          <span>0</span>
+          <Link to="/shopping-card">
+            <FaShoppingCart className={styles.shopIcon} />
+            <p>Cart</p>
+            <span>0</span>
+          </Link>
         </div>
       </nav>
       <Category />
