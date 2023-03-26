@@ -7,9 +7,13 @@ import ProductList from "../components/template/ProductList";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../store/stoe";
 import { getProducts } from "../store/ProductsSlice";
+// spinner assets
+import Spinner from "../components/module/Spinner";
 
 const HomePage = () => {
-  const { products } = useSelector((state: RootState) => state.products);
+  const { products, loading } = useSelector(
+    (state: RootState) => state.products
+  );
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -27,8 +31,14 @@ const HomePage = () => {
     <>
       <Banner />
       <Categories />
-      <ProductList products={productData} text="Our products" />
-      <ProductList products={electronicData} text="Electronics" />
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <ProductList products={productData} text="Our products" />
+          <ProductList products={electronicData} text="Electronics" />
+        </>
+      )}
     </>
   );
 };
