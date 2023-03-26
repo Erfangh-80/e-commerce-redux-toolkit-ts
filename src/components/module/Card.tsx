@@ -32,7 +32,7 @@ const Card = (props: cardProps): JSX.Element => {
 
           <div className={styles.details}>
             <h2>{product?.title}</h2>
-            <p>{formatPrice(+product?.price)} $</p>
+            <p>{formatPrice(+product?.price)}</p>
           </div>
         </Link>
         <div className={styles.actions}>

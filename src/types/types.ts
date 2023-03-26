@@ -11,6 +11,6 @@ export type Product = {
   price: string;
   description?: string;
   category: Category;
-  quantity?: number;
+  quantity: number;
   totalPrice?: number;
 };
