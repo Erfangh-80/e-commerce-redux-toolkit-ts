@@ -16,8 +16,34 @@
   display: block;
 }
 
-.details p{
+.details p {
   font-size: 1.5rem;
   color: #103755;
   font-weight: 700;
+}
+
+.container button {
+  background-color: #103755;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  transition: background 200ms ease;
+  margin: 0px 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions span {
+  color: #175483;
+  font-weight: 700;
+}
+
+.container button:hover {
+  background-color: #175483;
 }
