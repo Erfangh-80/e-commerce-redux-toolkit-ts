@@ -68,7 +68,8 @@
     rgba(0, 0, 0, 0.07) 0px 9px 16px;
 }
 
-.buttonContainer a {
+.buttonContainer button {
+  cursor: pointer;
   text-decoration: none;
   display: inline-block;
   background: #103755;
@@ -83,7 +84,7 @@
     rgba(0, 0, 0, 0.07) 0px 9px 16px;
 }
 
-.buttonContainer a:hover {
+.buttonContainer button:hover {
   background-color: #0b499b;
 }
 
