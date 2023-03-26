@@ -15,6 +15,7 @@ const initialState: IProductState = {
     price: "",
     title: "",
     category: { id: 0, image: "", name: "" },
+    quantity: 0,
   },
   loading: false,
   error: "",
