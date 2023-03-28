@@ -39,7 +39,6 @@ const Navbar: FC = (): JSX.Element => {
           </Link>
         </div>
       </nav>
-      <Category />
     </>
   );
 };

@@ -1,5 +1,5 @@
 // router
-import { FC, useEffect, useState } from "react";
+import {  useEffect } from "react";
 import { Link } from "react-router-dom";
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -12,14 +12,21 @@ import { IoMdCloseCircle } from "react-icons/io";
 import styles from "./Category.module.css";
 import { getCategories } from "../../../store/categoriesSlice";
 
-const Category: FC = (): JSX.Element => {
-  const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false);
+type navProps = {
+  isMenuOpen: Boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<Boolean>>
+}
+
+
+const Category = ({isMenuOpen, setIsMenuOpen}: navProps): JSX.Element => {
+  
   const categoryes = useSelector(
     (state: RootState) => state.categories.categories
   );
   const dispatch = useDispatch<AppDispatch>();
 
   const showMenuHandler = () => {
+    console.log(isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -43,8 +50,8 @@ const Category: FC = (): JSX.Element => {
           <IoMdCloseCircle className={styles.iconClose} />
         </button>
         {category.map((item) => (
-          <li key={item.id} className={styles.item}>
-            <Link to={`/filter-product/${item.id}`}>{item.name}</Link>
+          <li key={item.id} className={styles.item} >
+            <Link to={`/filter-product/${item.id}`} onClick={() => setIsMenuOpen(false)}>{item.name}</Link>
           </li>
         ))}
         
