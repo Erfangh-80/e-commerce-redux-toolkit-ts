@@ -67,12 +67,11 @@
 
   .listItem {
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: -16px;
     right: 0;
     background: #fff;
     z-index: 10;
-    background: #fff;
     width: 40%;
     height: calc(100vh - 32px);
     align-items: flex-start;
@@ -80,6 +79,7 @@
     box-shadow: #0000003d 0px 3px 8px;
     transition: all 3ms linear;
     transform: translateX(100%);
+    display: flex;
   }
 
   .showMenuItem {
